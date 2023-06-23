@@ -1,0 +1,45 @@
+{% extends 'mess.html' %}
+{% block nav %}
+{% include "nav1.html" %}
+{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="text-color text-center page-header mb-3 mt-5">Login Here</h1>
+         {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+        {% endif %}
+        <div class="card my-3" id="ani">
+            <div class="row">
+            <div class="col-md-6">
+                <img src="/media/login.png" height="100%" width="100%" alt="a">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body text-dark">
+            <form action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{form|crispy}}
+                <button type="submit" value="login" class="btn btn-primary pull-right">Login <i class="fa fa-sign-in"></i></button>
+            <a href="/register/">sign in..</a>
+            </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+            $("").animate({right:'250px'});
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "mess.html" %}
+{% include "bootstrap4.html" %}
+{% block content %}
+
+<div class="loader spinner-border" id="loading">
+</div>
+<div id="divtoshow" style="display: none;">hi helo</div>
+<script>
+    $("#loading").fadeOut(1500);
+    $("#divtoshow").fadeIn(2000);
+</script>
+{% endblock %}

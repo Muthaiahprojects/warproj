@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+    <h2>My Cart</h2>
+    <hr class="border-light">
+</div>
+<div class="container text-dark">
+    <div class="row">
+        {% for datas in data %}
+        <div class="card-deck my-3 col-sm-6 col-lg-3">
+                <div class="card">
+                    <img src=/media/{{datas.img}} atr="adv" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{datas.model}} <span class="badge badge-success">{{datas.brand}}</span></h5>
+                        <p class="card-text">{{datas.info}}</p>
+                        <h6 class="card-title">Price : {{datas.price}}</h6>
+                    </div>
+                    <div class="card-footer">
+                        <a href="\remove\{{datas.id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"> remove</i></a>
+                        <a href="\product\{{datas.model}}" class="btn btn-success btn-sm float-right"><i class="fa fa-info-circle">  info</i></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

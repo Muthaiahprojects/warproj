@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+{%  block content %}
+
+<h2 class="display-6">Product Details</h2>
+<div class="container-fluid bg-light text-dark">
+    <div class="row">
+        <div class="col-md-6 my-3">
+        <div class="card my-3">
+            <img src=/media/{{data.img}} alt="img" class="card-img-top">
+        </div>
+        <h5>{{data.model}} <span class="badge badge-success"> {{data.brand}}</span></h5>
+        <p>{{datas.details}}</p>
+    </div>
+        <div class="col-md-6 my-5">
+        <p>{{datas.specs}}</p>
+        <h6>price  : {{data.price}}</h6>
+        <a href="#" class="btn btn-primary mt-3"> Buy Now</a>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

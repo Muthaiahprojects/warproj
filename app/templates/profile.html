@@ -1,0 +1,23 @@
+{% extends 'mess.html' %}
+{% block nav %}
+{% include "nav2.html" %}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-5">
+        <h1 class="text-color text-center page-header">Profile Page </h1>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>user name</th>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <th>mailid</th>
+                <td>{{user.email}}</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+{% endblock %}

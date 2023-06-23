@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>nav</title>
+</head>
+<body class="bg-secondary text-light">
+   <div>
+    {% include "bootstrap5.html" %}
+    <div class="offcanvas offcanvas-start bg-dark text-light" data-bs-backdrop="static" tabindex="-1" id="offc">
+        <div class="offcanvas-header">
+            <h5>menu</h5>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body" style="font-size:20px;">
+            <a class="nav-link text-light " href="\moblie\Mobile"> <i class="fa fa-mobile"></i> Mobiles</a>
+            <a class="nav-link text-light " href="\moblie\headphone"><i class="fa fa-headphones"></i> headphone</a>
+            <a class="nav-link text-light " href="\moblie\laptop"><i class="fa fa-laptop"></i> laptop</a>
+            <a class="nav-link text-light " href="\moblie\computer"><i class="fa fa-desktop"></i> computer</a>
+            <a class="nav-link text-light " href="\moblie\blutooth"><i class="fa fa-bluetooth"></i> bluetooth</a>
+        </div>
+    </div>
+    </div>
+<div class="spinner-border load" id="loading">
+</div>
+<div id="divtoshow" style="display: none;">
+    {% include "bootstrap4.html" %}
+    {% block nav %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script>
+    $("#loading").hide(3500);
+    $("#divtoshow").fadeIn(4000);
+</script>
+
+</body>
+</html>
